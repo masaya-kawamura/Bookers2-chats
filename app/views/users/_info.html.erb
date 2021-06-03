@@ -18,9 +18,10 @@
   </tr>
 </table>
 
-<div class='row'>
+<div>
   <% unless user == current_user %>
     <%= render 'relationships/follow_form', user: user %>
+    <%= link_to 'chatを始める', chat_path(user.id), class:"text-secondary" %>
   <% else %>
     <%= link_to '',edit_user_path(user),class: "btn btn-outline-secondary btn-block fas fa-user-cog edit_user_#{user.id}" %>
   <% end %>
